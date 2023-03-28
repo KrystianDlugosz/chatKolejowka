@@ -1,4 +1,5 @@
 const User = require("../model/userModel");
+const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
 module.exports.login = async (req, res, next) => {
@@ -23,6 +24,8 @@ module.exports.login = async (req, res, next) => {
 module.exports.register = async (req, res, next) => {
   try {
     const { username, email, password } = req.body;
+    const newId = new mongoose.Types.ObjectId();
+
     const usernameCheck = await User.findOne({ username });
     if (usernameCheck)
       return res.json({ msg: "Nazwa użytkownika jest zajęta", status: false });
@@ -32,7 +35,7 @@ module.exports.register = async (req, res, next) => {
       return res.json({ msg: "Ten email został już użyty", status: false });
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = await User.create({
-      _id,
+      _id: newId,
       email,
       username,
       password: hashedPassword,
