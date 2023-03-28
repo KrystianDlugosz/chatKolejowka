@@ -194,7 +194,7 @@ export default function SetAvatar() {
       }
     };
     checkUser();
-  }, []);
+  }, [navigate]);
 
   const setProfilePicture = async () => {
     if (selectedAvatar === undefined) {
