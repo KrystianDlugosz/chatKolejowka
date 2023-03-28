@@ -1,15 +1,12 @@
 const mongoose = require("mongoose");
-// const id = new mongoose.Types.ObjectId();
-
-// const ObjectId = mongoose.Types.ObjectId;
-
-// const myId = new ObjectId();
 
 const userSchema = new mongoose.Schema({    
   _id: {
     type: mongoose.Schema.Types.ObjectId,
-    default: () => new mongoose.Types.ObjectId(),
-  },
+    default: function() {
+      return new mongoose.Types.ObjectId();
+    },
+  }, 
   username: {
     type: String,
     required: true,

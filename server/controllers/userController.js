@@ -24,7 +24,6 @@ module.exports.login = async (req, res, next) => {
 module.exports.register = async (req, res, next) => {
   try {
     const { username, email, password } = req.body;
-    const newId = new mongoose.Types.ObjectId();
 
     const usernameCheck = await User.findOne({ username });
     if (usernameCheck)
@@ -33,9 +32,9 @@ module.exports.register = async (req, res, next) => {
     const emailCheck = await User.findOne({ email });
     if (emailCheck)
       return res.json({ msg: "Ten email został już użyty", status: false });
+
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = await User.create({
-      _id: newId,
       email,
       username,
       password: hashedPassword,
