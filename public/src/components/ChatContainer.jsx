@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import ChatInput from "./ChatInput";
+import Logout from "./Logout";
+import Messages from "./Messages";
 
 export default function ChatContainer({ currentChat }) {
   const [currentUserName, setCurrentUsername] = useState(undefined);
@@ -12,20 +15,25 @@ export default function ChatContainer({ currentChat }) {
     }
   }, [currentChat]);
 
+  const handleSendMsg = async (msg) =>{};
+
   return (
     <Container>
       <div className="chat-header">
         <div className="user-details">
           <div className="avatar">
-            <img src={currentUserImage} alt="avatarImage" />
+            <img src={currentUserImage} 
+            alt="avatarImage" 
+            />
           </div>
           <div className="username">
             <h3>{currentUserName}</h3>
           </div>
         </div>
+      <Logout />
       </div>
-      <div className="chat-messages"></div>
-      <div className="chat-input"></div>
+      <Messages />
+      <ChatInput handleSendMsg={handleSendMsg}/>
     </Container>
   );
 }
@@ -36,7 +44,7 @@ const Container = styled.div`
         display: flex;
         justify-content: space-between;
         aling-items: center;
-        padding: 0.2rem;
+        padding: 0 2rem;
         .user-details{
             display: flex;
             align-items: center;
