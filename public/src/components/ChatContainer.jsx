@@ -162,6 +162,14 @@ const Container = styled.div`
     flex-direction: column;
     gap: 1rem;
     overflow: auto;
+    &::-webkit-scrollbar {
+      width: 0.2rem;
+      &-thumb {
+        background-color: #ffffff39;
+        width: 0.1rem;
+        border-radius: 1rem;
+      }
+    }
     .message {
       display: flex;
       align-items: center;
@@ -183,7 +191,7 @@ const Container = styled.div`
     .recieved {
       justify-content: flex-start;
       .content {
-        background-color: #9900ff20;
+        background-color: #D4242740;
       }
     }
   }
