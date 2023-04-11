@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { toast, ToastContainer } from "react-toastify";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../assets/logo.png";
 import "react-toastify/dist/ReactToastify.css";
@@ -22,30 +22,28 @@ function Login() {
     theme: "dark",
   };
 
-  useEffect(()=> {
-    if(localStorage.getItem('chat-app-user')){
-      navigate('/');
+  useEffect(() => {
+    if (localStorage.getItem("chat-app-user")) {
+      navigate("/");
     }
-    },[navigate]);
+  }, [navigate]);
 
-    
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
 
   const handleValidation = () => {
     const { username, password } = values;
-    if(username ==="" && password ===""){
+    if (username === "" && password === "") {
       toast.error("Wpisz nazwę użytkownika i hasło.", toastOptions);
       return false;
-    }
-    else if (username === "") {
+    } else if (username === "") {
       toast.error("Wpisz nazwę użytkownika.", toastOptions);
       return false;
     } else if (password === "") {
       toast.error("Wpisz hasło.", toastOptions);
       return false;
-    } 
+    }
     return true;
   };
 
@@ -67,12 +65,14 @@ function Login() {
         );
 
         navigate("/");
-      }else{
-        toast.error("Błąd wyboru awatara. Spróbuj ponownie później.",toastOptions);
+      } else {
+        toast.error(
+          "Błąd wyboru awatara. Spróbuj ponownie później.",
+          toastOptions
+        );
       }
     }
   };
-
 
   return (
     <>

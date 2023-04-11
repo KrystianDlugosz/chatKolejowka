@@ -14,29 +14,6 @@ export default function ChatContainer({ currentChat, currentUser, socket }) {
   const [arrivalMessage, setArrivalMessage] = useState(null);
   const scrollRef = useRef();
 
-  // useEffect(() => {
-  //   async function fetchMessages() {
-  //     if(currentChat){
-  //     const response = await axios.post(getAllMessagesRoute, {
-  //       from: currentUser._id,
-  //       to: currentChat._id,
-  //     });
-  //     setMessages(response.data);
-  //   }
-  // }
-  //   fetchMessages();
-  // }, [currentChat]);
-
-  // useEffect(async () => {
-  //   if (currentChat) {
-  //     const response = await axios.post(getAllMessagesRoute, {
-  //       from: currentUser._id,
-  //       to: currentChat._id,
-  //     });
-  //     setMessages(response.data);
-  //   }
-  // }, [currentChat]);
-
   async function fetchMessages() {
     if (currentChat) {
       const response = await axios.post(getAllMessagesRoute, {
@@ -46,7 +23,7 @@ export default function ChatContainer({ currentChat, currentUser, socket }) {
       setMessages(response.data);
     }
   }
-  
+
   useEffect(() => {
     fetchMessages();
   }, [currentChat]);
@@ -191,7 +168,7 @@ const Container = styled.div`
     .recieved {
       justify-content: flex-start;
       .content {
-        background-color: #D4242740;
+        background-color: #d4242740;
       }
     }
   }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { toast, ToastContainer } from "react-toastify";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../assets/logo.png";
 import "react-toastify/dist/ReactToastify.css";
@@ -23,11 +23,11 @@ function Register() {
     draggable: false,
     theme: "dark",
   };
-  useEffect(()=> {
-    if(localStorage.getItem('chat-app-user')){
-      navigate('/');
+  useEffect(() => {
+    if (localStorage.getItem("chat-app-user")) {
+      navigate("/");
     }
-    },[navigate])
+  }, [navigate]);
 
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
@@ -165,12 +165,12 @@ const FormContainer = styled.div`
     text-transform: uppercase;
   }
   #blueHeading {
-    color: #1A3D82;
+    color: #1a3d82;
     font-size: 50px;
     text-transform: uppercase;
   }
-  form{
-    display:flex;
+  form {
+    display: flex;
     flex-direction: column;
     gap: 2rem;
     background-color: rgba(45, 45, 45, 0.6);
@@ -182,19 +182,19 @@ const FormContainer = styled.div`
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: 2px solid #1A3D82;
+    border-bottom: 2px solid #1a3d82;
     padding: 1rem;
     color: #dedee0;
     width: 100%;
     font-size: 14px;
     transition: 0.5s ease-in-out;
   }
-  input:focus{
-    border-bottom: 2px solid #9C9CF0;
+  input:focus {
+    border-bottom: 2px solid #9c9cf0;
     outline: none;
   }
-  button{
-    background-color: #1A3D82;
+  button {
+    background-color: #1a3d82;
     color: #dedee0;
     padding: 1rem 2rem;
     border: none;
@@ -204,17 +204,17 @@ const FormContainer = styled.div`
     font-size: 18px;
     transition: 0.5s ease-in-out;
   }
-  button:hover{
-    background-color: #9C9CF0; 
+  button:hover {
+    background-color: #9c9cf0;
     scale: 1.05;
     color: #000000;
   }
-  span{
+  span {
     color: #dedee0;
     font-size: 14px;
-    a{
+    a {
       float: right;
-      color: #C4D8FF;
+      color: #c4d8ff;
       text-decoration: none;
     }
   }

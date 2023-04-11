@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.eaa62bd0.css",
+    "main.js": "/static/js/main.542fb397.js",
+    "static/media/robot.gif": "/static/media/robot.0617a41936621e9697cd.gif",
+    "static/media/hairdresserMan.png": "/static/media/hairdresserMan.e48c3c334ece19faf983.png",
+    "static/media/driverWoman.png": "/static/media/driverWoman.5e1415432ff6b562651d.png",
+    "static/media/driverMan.png": "/static/media/driverMan.cdb8e6ebb4c05539ad31.png",
+    "static/media/itWoman.png": "/static/media/itWoman.dea77e0436cf8821a26c.png",
+    "static/media/itMan.png": "/static/media/itMan.0e75a88538fc14350280.png",
+    "static/media/workerWoman.png": "/static/media/workerWoman.dc74c01b39b6c6d160d5.png",
+    "static/media/workerMan.png": "/static/media/workerMan.c29202484423a5d18a1b.png",
+    "static/media/hairdresserWoman.png": "/static/media/hairdresserWoman.405d3331ce05140cc3be.png",
+    "static/media/logo.png": "/static/media/logo.fd50132e73ada2e1ffd4.png",
+    "index.html": "/index.html",
+    "main.eaa62bd0.css.map": "/static/css/main.eaa62bd0.css.map",
+    "main.542fb397.js.map": "/static/js/main.542fb397.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eaa62bd0.css",
+    "static/js/main.542fb397.js"
+  ]
+}
