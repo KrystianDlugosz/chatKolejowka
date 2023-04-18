@@ -35,6 +35,9 @@
     "emoji-picker-react": "^4.4.8",
     "express": "^4.17.1",
     "react-toastify": "^9.1.1",
-    "socket.io": "^4.2.0"
+    "socket.io": "^4.2.0",
+    "resolutions": {
+      "**/@esbuild/*": "0"
+    }
   }
 }
